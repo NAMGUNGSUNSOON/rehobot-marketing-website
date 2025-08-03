@@ -42,7 +42,7 @@ function toggleMembersSection() {
 // 회원 목록 엑셀 다운로드
 function exportMembers() {
     // 실제 구현에서는 서버에서 데이터를 가져와 엑셀 파일로 변환
-    alert('회원 목록이 엑셀 파일로 다운로드됩니다.');
+    회원 목록 엑셀 다운로드 기능
 }
 
 document.addEventListener('DOMContentLoaded', () => {
