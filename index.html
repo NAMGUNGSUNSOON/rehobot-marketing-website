@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>르호봇 마케팅 세상 - 지경을 넓히다</title>
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="르호봇 마케팅 세상 - 블로그, 플레이스 대행 및 홈페이지 제작 전문 마케팅 컨설팅">
+    <meta name="keywords" content="마케팅, 블로그 대행, 네이버 플레이스, 홈페이지 제작">
+    <!-- 캐시 설정 -->
+    <meta http-equiv="cache-control" content="public, max-age=3600">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- 복사 방지 스타일 -->
+    <style>
+        /* 추가 복사 방지 */
+        body::selection { background: transparent; }
+        body::-moz-selection { background: transparent; }
+        body::-webkit-selection { background: transparent; }
+    </style>
 </head>
-<body>
+<body onselectstart="return false" ondragstart="return false" oncontextmenu="return false" onmousedown="return false">
     <!-- 네비게이션 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,19 +33,19 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">홈</a>
+                    <a href="index.html" class="nav-link">홈</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">회사소개</a>
+                    <a href="about.html" class="nav-link">회사소개</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">서비스</a>
+                    <a href="services.html" class="nav-link">서비스</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">연락처</a>
+                    <a href="contact.html" class="nav-link">연락처</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#location" class="nav-link">오시는 길</a>
+                    <a href="location.html" class="nav-link">오시는 길</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -56,8 +68,8 @@
                     귀하의 비즈니스 <span class="highlight">지경을 넓혀드리는</span> 최고의 마케팅 솔루션을 제공합니다.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#register" class="btn btn-primary">상담문의</a>
-                    <a href="#services" class="btn btn-secondary">서비스 보기</a>
+                    <a href="contact.html" class="btn btn-primary">상담문의</a>
+                    <a href="services.html" class="btn btn-secondary">서비스 보기</a>
                 </div>
             </div>
         </div>
@@ -133,14 +145,16 @@
         <div class="container">
             <h2 class="section-title">상담문의</h2>
             <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdyrSqO5m3-Qnc9gomFFz31XuFXRCPrEn_1x7iaHnNJA6n3iQ/viewform?embedded=true" 
-                    width="640" 
-                    height="1310" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0">
-                    로드 중...
-                </iframe>
+                <!-- 상담문의 양식 -->
+                <div class="demo-form">
+                    <h3>📋 상담문의 양식</h3>
+                    <p style="text-align: center; color: #666; padding: 40px;">
+                        📞 전화나 카카오톡으로 문의 주시면 빠른 상담 도와드립니다.
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="contact.html" class="btn btn-primary">연락처로 이동</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -155,7 +169,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>전화번호</h4>
-                            <p>010-2991-0423</p>
+                            <p>010-3954-7322</p>
                             <p>0507-345-7322</p>
                         </div>
                     </div>
@@ -170,14 +184,14 @@
                         <i class="fas fa-comment"></i>
                         <div>
                             <h4>카카오톡</h4>
-                            <p>ID: ngss22</p>
+                            <p>ID: ngss70</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>주소</h4>
-                            <p>경기도 군포시 고산로677번길 34</p>
+                            <p>경기도 군포시 금정역</p>
                         </div>
                     </div>
                 </div>
@@ -185,37 +199,17 @@
         </div>
     </section>
 
-    <!-- 지도 섹션 -->
-    <section id="location" class="location">
+    <!-- 오시는 길 안내 섹션 (자동 전환 방지) -->
+    <section id="location-info" class="location-info-section" style="padding: 80px 0; background: var(--accent-color); text-align: center;">
         <div class="container">
-            <h2 class="section-title">오시는 길</h2>
-            <div class="location-address">
-                <p><strong>주소:</strong> 경기도 군포시 고산로677번길 34</p>
-            </div>
-            <div class="map-container">
-                <!-- 카카오 지도 -->
-                <div id="kakao-map" class="map-content active">
-                    <iframe 
-                        src="https://map.kakao.com/link/search/경기도%20군포시%20고산로677번길%2034"
-                        width="100%" 
-                        height="400" 
-                        frameborder="0">
-                    </iframe>
-                </div>
-            </div>
-            
-            <!-- 지도 링크 버튼들 -->
-            <div class="map-links">
-                <a href="https://map.naver.com/v5/search/경기도%20군포시%20고산로677번길%2034" target="_blank" class="map-link naver">
-                    <i class="fas fa-external-link-alt"></i> 네이버 지도에서 보기
-                </a>
-                <a href="https://map.kakao.com/link/search/경기도%20군포시%20고산로677번길%2034" target="_blank" class="map-link kakao">
-                    <i class="fas fa-external-link-alt"></i> 카카오맵에서 보기
-                </a>
-                <a href="https://maps.google.com/maps?q=경기도+군포시+고산로677번길+34" target="_blank" class="map-link google">
-                    <i class="fas fa-external-link-alt"></i> 구글 지도에서 보기
-                </a>
-            </div>
+            <h2 class="section-title" style="color: var(--primary-color); margin-bottom: 30px;">오시는 길</h2>
+            <p style="color: #fff; font-size: 1.2em; margin-bottom: 30px;">
+                📍 경기도 군포시 금정역
+            </p>
+            <a href="location.html" class="btn btn-primary" style="padding: 15px 30px; font-size: 1.1em; text-decoration: none;">
+                <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                상세 지도 보기
+            </a>
         </div>
     </section>
 
@@ -226,6 +220,7 @@
         </div>
     </footer>
 
+    <script src="copy-protection.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

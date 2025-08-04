@@ -21,13 +21,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 스무스 스크롤
+// 스무스 스크롤 (자동 전환 방지)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        // 타겟 요소가 존재하고 현재 페이지에 있을 때만 스크롤
+        if (targetElement && targetElement.offsetParent !== null) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // 타겟이 없으면 기본 동작 허용 (다른 페이지로 이동)
     });
 });
 
@@ -42,7 +49,7 @@ function toggleMembersSection() {
 // 회원 목록 엑셀 다운로드
 function exportMembers() {
     // 실제 구현에서는 서버에서 데이터를 가져와 엑셀 파일로 변환
-    회원 목록 엑셀 다운로드 기능
+            // 회원 목록 엑셀 다운로드
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,4 +103,55 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-}); 
+});
+
+// 즉시 실행되는 강력한 복사 방지
+(function() {
+    'use strict';
+    
+    // 우클릭 방지
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    }, false);
+
+    // 키보드 단축키 방지
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && ['c', 'a', 'v', 'x', 's', 'u'].includes(e.key.toLowerCase())) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+    }, false);
+
+    // 텍스트 선택 방지
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    }, false);
+
+    // 드래그 방지
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    }, false);
+
+    // 지속적으로 선택 영역 제거
+    setInterval(function() {
+        if (window.getSelection && window.getSelection().toString()) {
+            window.getSelection().removeAllRanges();
+        }
+        if (document.selection && document.selection.empty) {
+            document.selection.empty();
+        }
+    }, 10);
+
+})();
+
+// 추가 전역 방지
+document.onselectstart = function() { return false; };
+document.ondragstart = function() { return false; };
