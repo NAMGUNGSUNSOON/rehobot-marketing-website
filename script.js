@@ -155,3 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 추가 전역 방지
 document.onselectstart = function() { return false; };
 document.ondragstart = function() { return false; };
+
+// Netlify Forms 자동 처리 (JavaScript 처리 불필요)
+// 폼 제출 시 Netlify가 자동으로 처리하고 성공 페이지로 리디렉트됩니다.
